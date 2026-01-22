@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const razorpay = require("./razorpay");
+const path = require('path')
 const crypto = require("crypto");
 const cors = require("cors");
 
@@ -10,6 +11,10 @@ const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
 app.use(cors());
+
+const dir_name = path.join(__dirname, "public")
+
+app.use(express.static(dir_name));
 
 app.get("/", (req, res) => {
   res.send("Razorpay Server Running");
