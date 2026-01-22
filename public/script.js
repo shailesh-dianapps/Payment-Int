@@ -1,6 +1,6 @@
 async function payNow() {
   try {
-    const res = await fetch("https://payment-int-production.up.railway.app/create-order", {
+    const res = await fetch("http://localhost:4000/create-order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ courseId: "course_001" })
@@ -20,7 +20,7 @@ async function payNow() {
       handler: function (response) {
         console.log(response);
 
-        fetch("https://payment-int-production.up.railway.app/verify-payment", {
+        fetch("http://localhost:4000/verify-payment", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
