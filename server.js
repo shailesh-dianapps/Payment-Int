@@ -1,8 +1,8 @@
+require("dotenv").config();
 const express = require('express')
 const razorpay = require("./razorpay");
 const crypto = require("crypto");
 const cors = require("cors");
-require("dotenv").config();
 
 const app = express()
 const port = 4000
